@@ -14,6 +14,8 @@ public class DetermineClassObject {
             System.out.println("Is the "+clazz+" is interface: "+clazz.isInterface());
             System.out.println("Is the "+clazz+" is member class: "+clazz.isMemberClass());
             System.out.println("Is the "+clazz+" is primitive: "+clazz.isPrimitive());
+            //it prints the super class of the current class.
+            System.out.println("Super class : "+clazz.getSuperclass());
 
 
             // PDC ~ List
