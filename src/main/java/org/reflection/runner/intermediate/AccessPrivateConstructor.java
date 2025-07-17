@@ -1,4 +1,4 @@
-package org.reflection.runner.core;
+package org.reflection.runner.intermediate;
 
 import org.reflection.model.ClassRoom;
 
@@ -6,7 +6,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Parameter;
 
-public class AccessConstructor {
+public class AccessPrivateConstructor {
     public static void main(String[] args) {
 
 
@@ -14,7 +14,7 @@ public class AccessConstructor {
         * Access the private parameterized constructor and set the constructor value
         * */
         Class<?> classRoom = ClassRoom.class;
-        Constructor[] constructors = classRoom.getDeclaredConstructors();
+        Constructor<?>[] constructors = classRoom.getDeclaredConstructors();
         classConstructorInfo(constructors);
         try {
             Constructor<?> constructor = classRoom.getDeclaredConstructor(new Class[]{Long.class, String.class});
@@ -30,10 +30,10 @@ public class AccessConstructor {
         }
     }
 
-    private static void classConstructorInfo(Constructor[] constructors) {
+    private static void classConstructorInfo(Constructor<?>[] constructors) {
         int counter = 0;
         System.out.println("Constructor Details :: ");
-        for(Constructor constructor: constructors){
+        for(Constructor<?> constructor: constructors){
             System.out.println("Constructor :: "+constructor);
 
             Parameter[] parameters = constructor.getParameters();

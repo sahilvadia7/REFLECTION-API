@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 
 public class ClassMetaData {
 
@@ -37,6 +38,7 @@ public class ClassMetaData {
             Method[] methods = clazz.getDeclaredMethods();
             for (Method method: methods){
                 System.out.println("- "+method);
+                System.out.println("Method Parameter Count : "+ method.getParameterCount());
             }
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
